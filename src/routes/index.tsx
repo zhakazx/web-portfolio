@@ -6,8 +6,9 @@ import SkillsSection from '../components/sections/SkillsSection'
 import AchievementsSection from '../components/sections/AchievementsSection'
 import ProjectsSection from '../components/sections/ProjectsSection'
 import ContactSection from '../components/sections/ContactSection'
-import Separator from '@/components/Separator'
-import Footer from '@/components/Footer'
+import Separator from '../components/Separator'
+import Footer from '../components/Footer'
+import LoadingScreen from '@/components/LoadingScreen'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -47,6 +48,8 @@ function App() {
   }, [])
 
   return (
+    <>
+    <LoadingScreen />
     <div className="min-h-screen bg-white">
       <Sidebar activeSection={activeSection} onNavigate={handleNavigate} />
       
@@ -65,5 +68,6 @@ function App() {
         </div>
       </main>
     </div>
+    </>
   )
 }
