@@ -26,14 +26,23 @@ function App() {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'skills', 'achievements', 'projects', 'contact']
+      const sections = [
+        'about',
+        'skills',
+        'achievements',
+        'projects',
+        'contact',
+      ]
       const scrollPosition = window.scrollY + window.innerHeight / 2
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId)
         if (element) {
           const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(sectionId)
             break
           }
@@ -49,25 +58,25 @@ function App() {
 
   return (
     <>
-    <LoadingScreen />
-    <div className="min-h-screen bg-white">
-      <Sidebar activeSection={activeSection} onNavigate={handleNavigate} />
-      
-      <main className="lg:ml-80 overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 py-8 lg:py-12 space-y-16 lg:space-y-20">
-          <AboutSection />
-          <Separator />
-          <SkillsSection />
-          <Separator />
-          <AchievementsSection />
-          <Separator />
-          <ProjectsSection />
-          <Separator />
-          <ContactSection />
-          <Footer />
-        </div>
-      </main>
-    </div>
+      <LoadingScreen />
+      <div className="min-h-screen bg-white">
+        <Sidebar activeSection={activeSection} onNavigate={handleNavigate} />
+
+        <main className="lg:ml-80 overflow-y-auto">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8 py-8 lg:py-12 space-y-16 lg:space-y-20">
+            <AboutSection />
+            <Separator />
+            <SkillsSection />
+            <Separator />
+            <AchievementsSection />
+            <Separator />
+            <ProjectsSection />
+            <Separator />
+            <ContactSection />
+            <Footer />
+          </div>
+        </main>
+      </div>
     </>
   )
 }
