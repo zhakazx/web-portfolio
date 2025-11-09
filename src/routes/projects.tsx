@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
 import { ArrowLeft, ExternalLink, Github, Lock } from 'lucide-react'
-import projectsData from '../data/projects.json'
+import projectsData from '@/data/projects.json'
 
 export const Route = createFileRoute('/projects')({ component: ProjectsPage })
 
@@ -9,14 +9,14 @@ interface Project {
   title: string
   description: string
   image: string
-  technologies: string[]
+  technologies: Array<string>
   isPrivate: boolean
   liveUrl: string | null
   codeUrl: string | null
 }
 
 function ProjectsPage() {
-  const allProjects: Project[] = projectsData.all
+  const allProjects: Array<Project> = projectsData.all
 
   return (
     <div className="min-h-screen bg-white">
@@ -30,13 +30,13 @@ function ProjectsPage() {
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
-          
+
           <h1 className="text-4xl lg:text-5xl font-bold text-black mb-4">
             All Projects
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl">
-            A comprehensive collection of my work in web development, 
-            from enterprise applications to educational platforms.
+            A comprehensive collection of my work in web development, from
+            enterprise applications to educational platforms.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ function ProjectsPage() {
                 <h2 className="text-xl font-bold text-black mb-3">
                   {project.title}
                 </h2>
-                
+
                 <p className="text-gray-700 mb-4 leading-relaxed text-sm line-clamp-3">
                   {project.description}
                 </p>
