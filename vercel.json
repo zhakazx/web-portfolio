@@ -1,3 +1,11 @@
 {
-  "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
+  "buildCommand": "tanstack build",
+  "outputDirectory": ".tanstack",
+  "installCommand": "npm install",
+  "builds": [
+    { "src": "server.mjs", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "server.mjs" }
+  ]
 }

@@ -15,11 +15,6 @@ const config = defineConfig({
     tanstackStart(),
     viteReact(),
   ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
 })
 
 export default config
