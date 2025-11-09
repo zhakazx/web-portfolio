@@ -1,0 +1,126 @@
+{
+  "featured": [
+    {
+      "id": "biodika",
+      "title": "Biodika",
+      "description": "Integrated CRM system for managing patient records, appointments, and billing in biodika clinic. Sync with BPJS and SATUSEHAT.",
+      "image": "/biodika.png",
+      "technologies": ["Laravel", "Livewire", "Bootstrap", "MySQL"],
+      "isPrivate": true,
+      "liveUrl": null,
+      "codeUrl": null
+    },
+    {
+      "id": "anime-info",
+      "title": "Anime Info",
+      "description": "A web application that provides information about various anime series, including summaries, ratings, and episode guides.",
+      "image": "/anime-info.png",
+      "technologies": ["NextJS", "Tailwind CSS"],
+      "isPrivate": false,
+      "liveUrl": "https://animeinfo.zhakazx.com",
+      "codeUrl": "https://github.com/zhakazx/animeinfo"
+    },
+    {
+      "id": "text-summarizer",
+      "title": "AI Text Summarizer",
+      "description": "A web application that uses natural language processing to summarize long articles and documents into concise summaries.",
+      "image": "/text-summarizer.png",
+      "technologies": ["NextJS", "Tailwind CSS"],
+      "isPrivate": false,
+      "liveUrl": "https://text-summarizer.zhakazx.com",
+      "codeUrl": "https://github.com/zhakazx/ai-text-summarizer"
+    },
+    {
+      "id": "1000hpk-unhas",
+      "title": "1000HPK UNHAS",
+      "description": "An application developed for medical students at Hasanuddin University to integrate the First 1000 Days of Life (HPK) program for pregnant women.",
+      "image": "/1000hpk-unhas.png",
+      "technologies": ["React", "Laravel", "Tailwind", "MySQL"],
+      "isPrivate": true,
+      "liveUrl": null,
+      "codeUrl": null
+    }
+  ],
+  "all": [
+    {
+      "id": "biodika",
+      "title": "Biodika Clinic",
+      "description": "Integrated CRM system for managing patient records, appointments, and billing in biodika clinic. Sync with BPJS and SATUSEHAT.",
+      "image": "/biodika.png",
+      "technologies": ["Laravel", "Livewire", "MySQL"],
+      "isPrivate": true,
+      "liveUrl": "https://biodika.example.com",
+      "codeUrl": "https://github.com/zhakazx/biodika"
+    },
+    {
+      "id": "text-summarizer",
+      "title": "AI Text Summarizer",
+      "description": "A web application that uses natural language processing to summarize long articles and documents into concise summaries.",
+      "image": "/text-summarizer.png",
+      "technologies": ["NextJS", "Tailwind CSS"],
+      "isPrivate": false,
+      "liveUrl": "https://text-summarizer.zhakazx.com",
+      "codeUrl": "https://github.com/zhakazx/ai-text-summarizer"
+    },
+    {
+      "id": "anime-info",
+      "title": "Anime Info",
+      "description": "A web application that provides information about various anime series, including summaries, ratings, and episode guides.",
+      "image": "/anime-info.png",
+      "technologies": ["NextJS", "Tailwind CSS"],
+      "isPrivate": false,
+      "liveUrl": "https://animeinfo.zhakazx.com",
+      "codeUrl": "https://github.com/zhakazx/animeinfo"
+    },
+    {
+      "id": "mindflow",
+      "title": "MindFlow",
+      "description": "Visually capture and explore your thoughts like floating bubbles on a canvas.",
+      "image": "/mindflow.png",
+      "technologies": ["React", "Tailwind CSS"],
+      "isPrivate": false,
+      "liveUrl": "https://mindflow.zhakazx.com",
+      "codeUrl": "https://github.com/zhakazx/mindflow"
+    },
+    {
+      "id": "1000hpk-unhas",
+      "title": "1000 HPK UNHAS",
+      "description": "Health monitoring system for the first 1000 days of life program at Hasanuddin University, tracking maternal and child health.",
+      "image": "/1000hpk-unhas.png",
+      "technologies": ["React", "Laravel", "Tailwind", "MySQL"],
+      "isPrivate": true,
+      "liveUrl": null,
+      "codeUrl": null
+    },
+    {
+      "id": "sipakatau-bkkbn",
+      "title": "SIPAKATAU BKKBN",
+      "description": "A comprehensive web application for BKKBN (National Population and Family Planning Board) to manage population data and family planning programs.",
+      "image": "/sipakatau-bkkbn.png",
+      "technologies": ["Laravel", "Livewire", "MySQL"],
+      "isPrivate": true,
+      "liveUrl": null,
+      "codeUrl": null
+    },
+    {
+      "id": "bosowa-crm",
+      "title": "Bosowa Clinic",
+      "description": "Integrated CRM system for managing patient records, appointments, and billing in Bosowa clinic. Sync with BPJS and SATUSEHAT.",
+      "image": "/bosowa-crm.png",
+      "technologies": ["Laravel", "Livewire", "MySQL"],
+      "isPrivate": true,
+      "liveUrl": null,
+      "codeUrl": null
+    },
+    {
+      "id": "pmb-ikbkjp",
+      "title": "PMB IKBKJP",
+      "description": "The academic information system of the Kurnia Jaya Persada Health and Business Institute for speed up the academic registration process for students and universities.",
+      "image": "/pmb-ikbkjp.png",
+      "technologies": ["Laravel", "Livewire", "Bootstrap", "MySQL"],
+      "isPrivate": false,
+      "liveUrl": "https://pmb.ikbkjp.ac.id/home",
+      "codeUrl": null
+    }
+  ]
+}
