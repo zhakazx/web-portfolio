@@ -1,6 +1,6 @@
 import { ExternalLink, Github, Lock } from 'lucide-react'
 import { Link } from '@tanstack/react-router'
-import projectsData from '../../data/projects.json'
+import projectsData from '@/data/projects.json'
 
 interface Project {
   id: string
@@ -36,7 +36,9 @@ export default function ProjectsSection() {
             }`}
           >
             {/* Project Image */}
-            <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''} order-1 lg:order-none`}>
+            <div
+              className={`${index % 2 === 1 ? 'lg:col-start-2' : ''} order-1 lg:order-none`}
+            >
               <div className="aspect-video bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
                 <img
                   src={project.image}
@@ -62,11 +64,13 @@ export default function ProjectsSection() {
             </div>
 
             {/* Project Details */}
-            <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} order-2 lg:order-none`}>
+            <div
+              className={`${index % 2 === 1 ? 'lg:col-start-1' : ''} order-2 lg:order-none`}
+            >
               <h3 className="text-xl lg:text-2xl font-bold text-black mb-4">
                 {project.title}
               </h3>
-              
+
               <p className="text-gray-700 mb-6 leading-relaxed text-sm lg:text-base">
                 {project.description}
               </p>
