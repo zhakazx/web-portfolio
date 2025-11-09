@@ -8,8 +8,8 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Photo */}
           <div className="flex justify-center lg:justify-start order-1 lg:order-2">
-            <div className="w-48 h-48 lg:w-64 lg:h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-              <img src="/zhaka.jpg" alt="Zhaka Hidayat Yasir" className="w-48 h-52 lg:w-64 lg:h-70 rounded-lg" />
+            <div className="w-52 h-52 lg:w-64 lg:h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+              <img src="/snow-close-up.jpg" alt="Zhaka Hidayat Yasir" className="w-52 h-52 lg:w-64 lg:h-64 rounded-lg" />
             </div>
           </div>
 
