@@ -15,6 +15,7 @@ import {
   SiReact,
   SiTailwindcss,
 } from 'react-icons/si'
+import { AnimatedSection, StaggerContainer, StaggerItem, FadeIn, HoverScale } from '@/components/animations'
 
 const iconSize = 'size-4'
 
@@ -54,40 +55,46 @@ const skillCategories = [
 export default function SkillsSection() {
   return (
     <section id="skills" className="py-6">
-      <div className="text-center mb-8 lg:mb-12">
-        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-foreground mb-4">
-          Skills & Technology
-        </h2>
-        <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-          These are the languages, frameworks, and tools I professionally use to
-          handle various aspects of web application development.
-        </p>
-      </div>
+      <AnimatedSection>
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-foreground mb-4">
+            Skills & Technology
+          </h2>
+          <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+            These are the languages, frameworks, and tools I professionally use to
+            handle various aspects of web application development.
+          </p>
+        </div>
+      </AnimatedSection>
 
       <div className="grid gap-6">
-        {skillCategories.map((category) => (
-          <div
-            key={category.title}
-            className="bg-card border border-border p-6"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <h3 className="text-lg lg:text-xl font-semibold text-card-foreground">
-                {category.title}
-              </h3>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              {category.skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center gap-2 bg-foreground text-primary-foreground px-3 py-1.5"
-                >
-                  {skill.icon}
-                  <span className="text-sm font-medium">{skill.name}</span>
+        {skillCategories.map((category, categoryIndex) => (
+          <FadeIn key={category.title} delay={categoryIndex * 0.15}>
+            <HoverScale>
+              <div className="bg-card border border-border p-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <h3 className="text-lg lg:text-xl font-semibold text-card-foreground">
+                    {category.title}
+                  </h3>
                 </div>
-              ))}
-            </div>
-          </div>
+
+                <StaggerContainer
+                  className="flex flex-wrap gap-3"
+                  staggerDelay={0.05}
+                  delayChildren={0.1}
+                >
+                  {category.skills.map((skill) => (
+                    <StaggerItem key={skill.name}>
+                      <div className="flex items-center gap-2 bg-foreground text-primary-foreground px-3 py-1.5 hover:bg-foreground/90 transition-colors cursor-default">
+                        {skill.icon}
+                        <span className="text-sm font-medium">{skill.name}</span>
+                      </div>
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
+              </div>
+            </HoverScale>
+          </FadeIn>
         ))}
       </div>
     </section>

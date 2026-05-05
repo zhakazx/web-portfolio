@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router'
 import {
   Briefcase,
   Code,
+  Github,
   Mail,
   Menu,
   Trophy,
@@ -18,6 +19,7 @@ interface SidebarProps {
 
 const navItems = [
   { id: 'about', label: 'About', icon: User, description: 'Get to know me' },
+  { id: 'github', label: 'GitHub', icon: Github, description: 'Open source activity' },
   { id: 'skills', label: 'Skills', icon: Code, description: 'Technical expertise' },
   { id: 'achievements', label: 'Achievements', icon: Trophy, description: 'Professional accomplishments' },
   { id: 'projects', label: 'Projects', icon: Briefcase, description: 'My work showcase' },

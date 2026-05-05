@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import Sidebar from '@/components/Sidebar'
 import AboutSection from '@/components/sections/AboutSection'
+import GitHubSection from '@/components/sections/GitHubSection'
 import SkillsSection from '@/components/sections/SkillsSection'
 import AchievementsSection from '@/components/sections/AchievementsSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
@@ -10,10 +11,9 @@ import Separator from '@/components/Separator'
 import Footer from '@/components/Footer'
 import LoadingScreen from '@/components/LoadingScreen'
 
-export const Route = createFileRoute('/')({ component: App })
-
 const SECTIONS = [
   'about',
+  'github',
   'skills',
   'achievements',
   'projects',
@@ -67,6 +67,8 @@ function App() {
           <div className="max-w-4xl mx-auto px-6 lg:px-8 py-8 lg:py-12 space-y-16 lg:space-y-20">
             <AboutSection />
             <Separator />
+            <GitHubSection />
+            <Separator />
             <SkillsSection />
             <Separator />
             <AchievementsSection />
@@ -81,3 +83,5 @@ function App() {
     </>
   )
 }
+
+export const Route = createFileRoute('/')({ component: App })
