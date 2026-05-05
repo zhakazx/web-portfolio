@@ -199,8 +199,8 @@ export default function GitHubSection() {
             blockMargin={4}
             fontSize={14}
             theme={{
-              light: ['#e5e5e5', '#d4d4d4', '#737373', '#404040', '#0a0a0a'],
-              dark: ['#262626', '#404040', '#737373', '#a3a3a3', '#e5e5e5'],
+              light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+              dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
             }}
             style={{
               color: '#0a0a0a',
