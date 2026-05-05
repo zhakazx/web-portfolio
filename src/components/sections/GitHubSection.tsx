@@ -104,7 +104,7 @@ function ContributionGraph({ contributions }: { contributions: Array<Activity> }
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.01, duration: 0.3 }}
-              className="flex-1 bg-foreground/80 hover:bg-foreground transition-colors rounded-t-sm origin-bottom relative group"
+              className="flex-1 bg-[#26a641] hover:bg-[#006d32] transition-colors rounded-t-sm origin-bottom relative group"
               style={{ height: `${Math.max(height, 4)}%` }}
             >
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 bg-foreground text-primary-foreground text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
