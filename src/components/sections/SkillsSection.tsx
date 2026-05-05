@@ -3,7 +3,8 @@ import {
   SiDocker,
   SiGit,
   SiGoland,
-  SiHono,
+  SiKubernetes,
+  SiNestjs,
   SiHtml5,
   SiJavascript,
   SiLaravel,
@@ -14,6 +15,12 @@ import {
   SiPython,
   SiReact,
   SiTailwindcss,
+  SiRedis,
+  SiSwagger,
+  SiGooglecloud,
+  SiCloudflare,
+  SiBootstrap,
+  SiSvelte
 } from 'react-icons/si'
 import { AnimatedSection, StaggerContainer, StaggerItem, FadeIn, HoverScale } from '@/components/animations'
 
@@ -25,10 +32,13 @@ const skillCategories = [
     skills: [
       { name: 'HTML', icon: <SiHtml5 className={iconSize} /> },
       { name: 'CSS', icon: <SiCss className={iconSize} /> },
+      { name: 'TypeScript', icon: <SiJavascript className={iconSize} /> },
       { name: 'JavaScript', icon: <SiJavascript className={iconSize} /> },
       { name: 'React', icon: <SiReact className={iconSize} /> },
       { name: 'Next.js', icon: <SiNextdotjs className={iconSize} /> },
+      { name: 'Svelte', icon: <SiSvelte className={iconSize} /> },
       { name: 'Tailwind CSS', icon: <SiTailwindcss className={iconSize} /> },
+      { name: 'Bootstrap', icon: <SiBootstrap className={iconSize} /> }
     ],
   },
   {
@@ -36,18 +46,29 @@ const skillCategories = [
     skills: [
       { name: 'PHP (Laravel)', icon: <SiLaravel className={iconSize} /> },
       { name: 'Golang', icon: <SiGoland className={iconSize} /> },
-      { name: 'Hono', icon: <SiHono className={iconSize} /> },
+      { name: 'NestJS', icon: <SiNestjs className={iconSize} /> },
       { name: 'Python', icon: <SiPython className={iconSize} /> },
       { name: 'PostgreSQL', icon: <SiPostgresql className={iconSize} /> },
       { name: 'MySQL', icon: <SiMysql className={iconSize} /> },
+      { name: 'Redis', icon: <SiRedis className={iconSize} /> },
+    ],
+  },
+  {
+    title: 'Devops & Infrastructure',
+    skills: [
+      { name: 'Docker', icon: <SiDocker className={iconSize} /> },
+      { name: 'CI/CD', icon: <SiGit className={iconSize} /> },
+      { name: 'Cloudflare', icon: <SiCloudflare className={iconSize} /> },
+      { name: 'GCP', icon: <SiGooglecloud className={iconSize} /> },
+      { name: 'Kubernetes', icon: <SiKubernetes className={iconSize} /> },
     ],
   },
   {
     title: 'Tools',
     skills: [
       { name: 'Git', icon: <SiGit className={iconSize} /> },
-      { name: 'Docker', icon: <SiDocker className={iconSize} /> },
       { name: 'Postman', icon: <SiPostman className={iconSize} /> },
+      { name: 'Swagger', icon: <SiSwagger className={iconSize} /> },
     ],
   },
 ]
