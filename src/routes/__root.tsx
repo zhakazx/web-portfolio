@@ -19,11 +19,13 @@ export const Route = createRootRoute({
       },
       {
         name: 'description',
-        content: 'Personal portfolio of Zhaka Hidayat Yasir, a passionate Fullstack Developer with 2+ years of experience building web applications and dashboards.',
+        content:
+          'Personal portfolio of Zhaka Hidayat Yasir, a passionate Fullstack Developer with 2+ years of experience building web applications and dashboards.',
       },
       {
         name: 'keywords',
-        content: 'Zhaka Hidayat Yasir, Fullstack Developer, React, Next.js, Python, Golang, Web Development, Portfolio',
+        content:
+          'Zhaka Hidayat Yasir, Fullstack Developer, React, Next.js, Python, Golang, Web Development, Portfolio',
       },
     ],
     links: [
@@ -43,7 +45,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-white text-black antialiased">
+      <body className="bg-background text-foreground antialiased">
         {children}
         <TanStackDevtools
           config={{

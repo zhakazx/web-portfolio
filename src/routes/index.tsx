@@ -12,6 +12,14 @@ import LoadingScreen from '@/components/LoadingScreen'
 
 export const Route = createFileRoute('/')({ component: App })
 
+const SECTIONS = [
+  'about',
+  'skills',
+  'achievements',
+  'projects',
+  'contact',
+] as const
+
 function App() {
   const [activeSection, setActiveSection] = useState('about')
 
@@ -26,16 +34,9 @@ function App() {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = [
-        'about',
-        'skills',
-        'achievements',
-        'projects',
-        'contact',
-      ]
       const scrollPosition = window.scrollY + window.innerHeight / 2
 
-      for (const sectionId of sections) {
+      for (const sectionId of SECTIONS) {
         const element = document.getElementById(sectionId)
         if (element) {
           const { offsetTop, offsetHeight } = element
@@ -59,7 +60,7 @@ function App() {
   return (
     <>
       <LoadingScreen />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-background">
         <Sidebar activeSection={activeSection} onNavigate={handleNavigate} />
 
         <main className="lg:ml-80 overflow-y-auto">

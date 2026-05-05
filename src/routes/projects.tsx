@@ -1,40 +1,58 @@
+import { useState } from 'react'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { ArrowLeft, ExternalLink, Github, Lock } from 'lucide-react'
+import type { Project } from '@/lib/projects'
+import { cn } from '@/lib/utils'
 import projectsData from '@/data/projects.json'
 
-export const Route = createFileRoute('/projects')({ component: ProjectsPage })
+function ProjectCardImage({ project }: { project: Project }) {
+  const [hasError, setHasError] = useState(false)
 
-interface Project {
-  id: string
-  title: string
-  description: string
-  image: string
-  technologies: Array<string>
-  isPrivate: boolean
-  liveUrl: string | null
-  codeUrl: string | null
+  if (hasError) {
+    return (
+      <div className="flex items-center justify-center w-full h-full text-muted-foreground">
+        <div className="text-center">
+          <div className="size-16 bg-muted rounded-lg mx-auto mb-2" />
+          <p className="text-sm">{project.title}</p>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={project.image}
+      alt={project.title}
+      className="w-full h-full object-cover"
+      onError={() => setHasError(true)}
+    />
+  )
 }
+
+export const Route = createFileRoute('/projects')({
+  component: ProjectsPage,
+})
 
 function ProjectsPage() {
   const allProjects: Array<Project> = projectsData.all
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="mb-12">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-black transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="size-4" />
             Back to Home
           </Link>
 
-          <h1 className="text-4xl lg:text-5xl font-bold text-black mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
             All Projects
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl">
+          <p className="text-lg text-muted-foreground max-w-2xl">
             A comprehensive collection of my work in web development, from
             enterprise applications to educational platforms.
           </p>
@@ -45,39 +63,20 @@ function ProjectsPage() {
           {allProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
+              className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
             >
               {/* Project Image */}
-              <div className="aspect-video bg-gray-100 flex items-center justify-center">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.style.display = 'none'
-                    const parent = target.parentElement
-                    if (parent) {
-                      parent.innerHTML = `
-                        <div class="flex items-center justify-center w-full h-full text-gray-400">
-                          <div class="text-center">
-                            <div class="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-                            <p class="text-sm">${project.title}</p>
-                          </div>
-                        </div>
-                      `
-                    }
-                  }}
-                />
+              <div className="aspect-video bg-muted flex items-center justify-center">
+                <ProjectCardImage project={project} />
               </div>
 
               {/* Project Details */}
               <div className="p-6 flex flex-col flex-grow">
-                <h2 className="text-xl font-bold text-black mb-3">
+                <h2 className="text-xl font-bold text-card-foreground mb-3">
                   {project.title}
                 </h2>
 
-                <p className="text-gray-700 mb-4 leading-relaxed text-sm line-clamp-3">
+                <p className="text-foreground/80 mb-4 leading-relaxed text-sm line-clamp-3">
                   {project.description}
                 </p>
 
@@ -87,13 +86,13 @@ function ProjectsPage() {
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md border"
+                        className="px-2 py-1 bg-muted text-foreground/80 text-xs rounded-md border border-border"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md border">
+                      <span className="px-2 py-1 bg-muted text-foreground/80 text-xs rounded-md border border-border">
                         +{project.technologies.length - 3}
                       </span>
                     )}
@@ -106,12 +105,16 @@ function ProjectsPage() {
                     <div>
                       <button
                         disabled
-                        className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 text-gray-400 rounded-md cursor-not-allowed text-sm"
+                        className={cn(
+                          'w-full flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm',
+                          'bg-muted text-muted-foreground cursor-not-allowed'
+                        )}
+                        aria-label="Private project"
                       >
-                        <Lock className="w-4 h-4" />
+                        <Lock className="size-4" />
                         Private Project
                       </button>
-                      <p className="text-xs text-gray-500 mt-1 text-center">
+                      <p className="text-xs text-muted-foreground mt-1 text-center">
                         Code confidential due to NDA
                       </p>
                     </div>
@@ -122,9 +125,9 @@ function ProjectsPage() {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors text-sm"
+                          className="flex items-center justify-center gap-2 px-4 py-2 bg-foreground text-primary-foreground rounded-md hover:bg-foreground/90 transition-colors text-sm"
                         >
-                          <ExternalLink className="w-4 h-4" />
+                          <ExternalLink className="size-4" />
                           Live Preview
                         </a>
                       )}
@@ -133,9 +136,9 @@ function ProjectsPage() {
                           href={project.codeUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors text-sm"
+                          className="flex items-center justify-center gap-2 px-4 py-2 border border-border text-foreground rounded-md hover:bg-muted transition-colors text-sm"
                         >
-                          <Github className="w-4 h-4" />
+                          <Github className="size-4" />
                           Code
                         </a>
                       )}
@@ -148,9 +151,10 @@ function ProjectsPage() {
         </div>
 
         {/* Footer */}
-        <footer className="mt-20 pt-8 border-t border-gray-200 text-center">
-          <p className="text-gray-600">
-            © 2025 Zhaka Hidayat Yasir. All rights reserved.
+        <footer className="mt-20 pt-8 border-t border-border text-center">
+          <p className="text-muted-foreground">
+            © {new Date().getFullYear()} Zhaka Hidayat Yasir. All rights
+            reserved.
           </p>
         </footer>
       </div>
