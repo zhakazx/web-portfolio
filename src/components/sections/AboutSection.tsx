@@ -12,7 +12,7 @@ export default function AboutSection() {
             <ScaleIn delay={0.2}>
               <div className="size-52 lg:size-64 bg-muted rounded-lg flex items-center justify-center overflow-hidden">
                 <img
-                  src="/snow-close-up.jpg"
+                  src="/formal-greyscale.png"
                   alt="Zhaka Hidayat Yasir"
                   className="size-52 lg:size-64 rounded-lg object-cover"
                 />
