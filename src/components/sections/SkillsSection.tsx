@@ -1,4 +1,4 @@
-import { SiCss3, SiHtml5, SiJavascript, SiPython, SiReact, SiTailwindcss, SiGoland, SiGit, SiDocker, SiMysql, SiPostman, SiLaravel, SiNextdotjs, SiPostgresql, SiHono } from 'react-icons/si';
+import { SiCss, SiHtml5, SiJavascript, SiPython, SiReact, SiTailwindcss, SiGoland, SiGit, SiDocker, SiMysql, SiPostman, SiLaravel, SiNextdotjs, SiPostgresql, SiHono } from 'react-icons/si';
 
 const iconSize = 'w-4 h-4'
 
@@ -12,7 +12,7 @@ const skillCategories = [
       },
       {
         name: "CSS",
-        icon: <SiCss3 className={iconSize} />
+        icon: <SiCss className={iconSize} />
       },
       {
         name: "JavaScript",
