@@ -115,7 +115,7 @@ export default function ProjectsSection() {
 
                         {/* Action Buttons */}
                         <StaggerItem>
-                          <div className="flex flex-col sm:flex-row gap-3">
+                          <div className="flex flex-col sm:flex-row gap-3 mb-2">
                             {project.isPrivate ? (
                               <button
                                 disabled
