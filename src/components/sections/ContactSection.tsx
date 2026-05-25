@@ -33,7 +33,7 @@ export default function ContactSection() {
     <section id="contact" className="py-2">
       <AnimatedSection>
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl font-bold text-foreground mb-2">
             Get In Touch
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl">

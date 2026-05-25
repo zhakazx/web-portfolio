@@ -51,7 +51,7 @@ export default function AchievementsSection() {
     <section id="achievements" className="py-2">
       <AnimatedSection>
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl font-bold text-foreground mb-2">
             Achievements
           </h2>
           <p className="text-base text-muted-foreground">

@@ -37,7 +37,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-2">
       <AnimatedSection>
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl font-bold text-foreground mb-2">
             Featured Projects
           </h2>
           <p className="text-base text-muted-foreground">
@@ -46,7 +46,7 @@ export default function ProjectsSection() {
         </div>
       </AnimatedSection>
 
-      <div className="space-y-12">
+      <div className="max-w-4xl mx-auto space-y-8">
         <StaggerContainer staggerDelay={0.25} delayChildren={0.1}>
           {featuredProjects.map((project, index) => {
             const isReversed = index % 2 === 1
@@ -55,7 +55,7 @@ export default function ProjectsSection() {
               <StaggerItem key={project.id}>
                 <div
                   className={cn(
-                    'grid lg:grid-cols-2 gap-6 items-center',
+                    'grid lg:grid-cols-2 gap-6 mb-2 items-center',
                     isReversed && 'lg:grid-flow-col-dense'
                   )}
                 >
