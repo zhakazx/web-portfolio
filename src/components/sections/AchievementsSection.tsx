@@ -51,7 +51,7 @@ export default function AchievementsSection() {
     <section id="achievements" className="py-2">
       <AnimatedSection>
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-2">
+          <h2 className="text-xl font-bold text-foreground mb-2 uppercase">
             Achievements
           </h2>
           <p className="text-base text-muted-foreground">
@@ -74,10 +74,10 @@ export default function AchievementsSection() {
                       </div>
                     </FadeIn>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-card-foreground">
+                      <h3 className="text-base font-semibold text-card-foreground">
                         {achievement.title}
                       </h3>
-                      <p className="text-foreground/80 mt-2">
+                      <p className="text-sm text-foreground/80 mt-2">
                         {achievement.description}
                       </p>
                       <StaggerContainer
@@ -89,7 +89,7 @@ export default function AchievementsSection() {
                           <StaggerItem key={item.label}>
                             <div className="flex gap-2 items-start">
                               <CheckCircle2 className="size-4 min-w-4 mt-0.5 text-foreground flex-shrink-0" />
-                              <span className="text-foreground/80">
+                              <span className="text-sm text-foreground/80">
                                 <span className="font-medium">{item.label}:</span>{' '}
                                 {item.text}
                               </span>

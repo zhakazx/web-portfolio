@@ -5,7 +5,7 @@ import AboutSection from '@/components/sections/AboutSection'
 import GitHubSection from '@/components/sections/GitHubSection'
 import SkillsSection from '@/components/sections/SkillsSection'
 import AchievementsSection from '@/components/sections/AchievementsSection'
-import ProjectsSection from '@/components/sections/ProjectsSection'
+// import ProjectsSection from '@/components/sections/ProjectsSection'
 import ContactSection from '@/components/sections/ContactSection'
 // import Separator from '@/components/Separator'
 import Footer from '@/components/Footer'
@@ -71,7 +71,7 @@ function App() {
             {/* <Separator /> */}
             <AchievementsSection />
             {/* <Separator /> */}
-            <ProjectsSection />
+            {/* <ProjectsSection /> */}
             {/* <Separator /> */}
             <ContactSection />
             <Footer />

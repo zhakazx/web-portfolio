@@ -56,7 +56,7 @@ export default function SkillsSection() {
     <section id="skills" className="py-2">
       <AnimatedSection>
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-2">
+          <h2 className="text-xl font-semibold text-foreground mb-2 uppercase">
             Tech Stack
           </h2>
           <p className="text-base text-muted-foreground">

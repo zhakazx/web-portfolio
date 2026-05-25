@@ -20,7 +20,7 @@ const navItems = [
   { id: 'about', label: 'About', icon: User, description: 'Get to know me' },
   { id: 'skills', label: 'Skills', icon: Code, description: 'Technical expertise' },
   { id: 'achievements', label: 'Achievements', icon: Trophy, description: 'Professional accomplishments' },
-  { id: 'projects', label: 'Projects', icon: Briefcase, description: 'My work showcase' },
+  // { id: 'projects', label: 'Projects', icon: Briefcase, description: 'My work showcase' },
   { id: 'contact', label: 'Contact', icon: Mail, description: "Let's connect" },
 ]
 

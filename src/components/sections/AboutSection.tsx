@@ -13,7 +13,7 @@ export default function AboutSection() {
           className="size-16 rounded-full object-cover"
         />
         <div>
-          <h1 className="text-2xl font-bold text-foreground">
+          <h1 className="text-2xl font-bold text-foreground uppercase">
             Zhaka Hidayat Yasir
           </h1>
           <p className="text-muted-foreground">Fullstack Developer</p>
@@ -46,7 +46,7 @@ export default function AboutSection() {
       <p className="text-foreground/80 leading-relaxed mb-8">
         I build full-stack web products end-to-end, obsessing over small details
         that make software feel right to use. Currently working with{' '}
-        <strong>TypeScript</strong>, <strong>React</strong>,{' '}
+        <strong>Laravel</strong>, <strong>TypeScript</strong>, <strong>React</strong>,{' '}
         <strong>Next.js</strong>, and <strong>Tailwind CSS</strong>.
       </p>
 

@@ -15,7 +15,7 @@ export default function GitHubSection() {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="bg-card mb-8 overflow-x-auto"
       >
-        <h3 className="text-lg font-semibold text-card-foreground mb-4 flex items-center gap-2">
+        <h3 className="text-xl font-semibold text-card-foreground mb-4 flex items-center gap-2 uppercase">
           <GitCommit className="size-5" />
           Contribution Calendar
         </h3>

@@ -37,7 +37,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-2">
       <AnimatedSection>
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-2">
+          <h2 className="text-xl font-bold text-foreground mb-2 uppercase">
             Featured Projects
           </h2>
           <p className="text-base text-muted-foreground">
@@ -82,13 +82,13 @@ export default function ProjectsSection() {
                   >
                     <StaggerContainer staggerDelay={0.1} delayChildren={0.2}>
                       <StaggerItem>
-                        <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-4">
+                        <h3 className="text-lg font-bold text-foreground mb-4">
                           {project.title}
                         </h3>
                       </StaggerItem>
 
                       <StaggerItem>
-                        <p className="text-foreground/80 mb-6 leading-relaxed text-sm lg:text-base">
+                        <p className="text-base text-foreground/80 mb-6 leading-relaxed lg:text-base">
                           {project.description}
                         </p>
                       </StaggerItem>
