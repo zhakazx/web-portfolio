@@ -1,5 +1,5 @@
 import { CheckCircle2, Medal, Trophy } from 'lucide-react'
-import { AnimatedSection, StaggerContainer, StaggerItem, FadeIn, HoverScale } from '@/components/animations'
+import { AnimatedSection, StaggerContainer, StaggerItem, FadeIn } from '@/components/animations'
 
 const achievements = [
   {
@@ -48,60 +48,58 @@ const achievements = [
 
 export default function AchievementsSection() {
   return (
-    <section id="achievements" className="py-6">
+    <section id="achievements" className="py-2">
       <AnimatedSection>
-        <div className="text-center mb-8 lg:mb-12">
-          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-foreground mb-4">
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-4">
             Achievements
           </h2>
-          <p className="text-base lg:text-lg text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             Highlighting the awards and accomplishments from my journey so far.
           </p>
         </div>
       </AnimatedSection>
 
-      <div className="max-w-4xl mx-auto px-6 space-y-8">
+      <div className="max-w-4xl mx-auto space-y-8">
         <StaggerContainer staggerDelay={0.2} delayChildren={0.1}>
           {achievements.map((achievement) => {
             const Icon = achievement.icon
             return (
               <StaggerItem key={achievement.id}>
-                <HoverScale scale={1.01}>
-                  <div className="border border-border p-6 bg-card">
-                    <div className="flex items-start gap-4">
-                      <FadeIn direction="right" delay={0.1}>
-                        <div className="size-12 min-w-12 rounded-full bg-foreground text-primary-foreground flex items-center justify-center flex-shrink-0">
-                          <Icon className="size-6" strokeWidth={2} />
-                        </div>
-                      </FadeIn>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-card-foreground">
-                          {achievement.title}
-                        </h3>
-                        <p className="text-foreground/80 mt-2">
-                          {achievement.description}
-                        </p>
-                        <StaggerContainer
-                          className="mt-3 space-y-2"
-                          staggerDelay={0.1}
-                          delayChildren={0.3}
-                        >
-                          {achievement.items.map((item) => (
-                            <StaggerItem key={item.label}>
-                              <div className="flex gap-2 items-start">
-                                <CheckCircle2 className="size-4 min-w-4 mt-0.5 text-foreground flex-shrink-0" />
-                                <span className="text-foreground/80">
-                                  <span className="font-medium">{item.label}:</span>{' '}
-                                  {item.text}
-                                </span>
-                              </div>
-                            </StaggerItem>
-                          ))}
-                        </StaggerContainer>
+                <div className="border border-border p-6 bg-card">
+                  <div className="flex items-start gap-4">
+                    <FadeIn direction="right" delay={0.1}>
+                      <div className="size-12 min-w-12 rounded-full bg-foreground text-primary-foreground flex items-center justify-center flex-shrink-0">
+                        <Icon className="size-6" strokeWidth={2} />
                       </div>
+                    </FadeIn>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-card-foreground">
+                        {achievement.title}
+                      </h3>
+                      <p className="text-foreground/80 mt-2">
+                        {achievement.description}
+                      </p>
+                      <StaggerContainer
+                        className="mt-3 space-y-2"
+                        staggerDelay={0.1}
+                        delayChildren={0.3}
+                      >
+                        {achievement.items.map((item) => (
+                          <StaggerItem key={item.label}>
+                            <div className="flex gap-2 items-start">
+                              <CheckCircle2 className="size-4 min-w-4 mt-0.5 text-foreground flex-shrink-0" />
+                              <span className="text-foreground/80">
+                                <span className="font-medium">{item.label}:</span>{' '}
+                                {item.text}
+                              </span>
+                            </div>
+                          </StaggerItem>
+                        ))}
+                      </StaggerContainer>
                     </div>
                   </div>
-                </HoverScale>
+                </div>
               </StaggerItem>
             )
           })}

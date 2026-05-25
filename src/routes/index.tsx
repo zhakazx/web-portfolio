@@ -7,9 +7,9 @@ import SkillsSection from '@/components/sections/SkillsSection'
 import AchievementsSection from '@/components/sections/AchievementsSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
 import ContactSection from '@/components/sections/ContactSection'
-import Separator from '@/components/Separator'
+// import Separator from '@/components/Separator'
 import Footer from '@/components/Footer'
-import LoadingScreen from '@/components/LoadingScreen'
+// import LoadingScreen from '@/components/LoadingScreen'
 
 const SECTIONS = [
   'about',
@@ -23,7 +23,6 @@ const SECTIONS = [
 function App() {
   const [activeSection, setActiveSection] = useState('about')
 
-  // Handle smooth scrolling to sections
   const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -31,7 +30,6 @@ function App() {
     }
   }
 
-  // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2
@@ -52,29 +50,29 @@ function App() {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Initial check
+    handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
     <>
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
       <div className="min-h-screen bg-background">
         <Sidebar activeSection={activeSection} onNavigate={handleNavigate} />
 
         <main className="lg:ml-80 overflow-y-auto">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 py-8 lg:py-12 space-y-16 lg:space-y-20">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8 py-8 lg:py-12 space-y-16">
             <AboutSection />
-            <Separator />
+            {/* <Separator /> */}
             <GitHubSection />
-            <Separator />
+            {/* <Separator /> */}
             <SkillsSection />
-            <Separator />
+            {/* <Separator /> */}
             <AchievementsSection />
-            <Separator />
+            {/* <Separator /> */}
             <ProjectsSection />
-            <Separator />
+            {/* <Separator /> */}
             <ContactSection />
             <Footer />
           </div>

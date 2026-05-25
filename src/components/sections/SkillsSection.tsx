@@ -75,13 +75,13 @@ const skillCategories = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-6">
+    <section id="skills" className="py-2">
       <AnimatedSection>
-        <div className="text-center mb-8 lg:mb-12">
-          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-foreground mb-4">
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-4">
             Skills & Technology
           </h2>
-          <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="text-base text-muted-foreground max-w-2xl">
             These are the languages, frameworks, and tools I professionally use to
             handle various aspects of web application development.
           </p>
